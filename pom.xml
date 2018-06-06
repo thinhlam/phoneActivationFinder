@@ -6,7 +6,8 @@
 
     <groupId>com.thinhl</groupId>
     <artifactId>PhoneActivationFinder</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.5</version>
+    <packaging>jar</packaging>
 
     <build>
         <plugins>
@@ -19,6 +20,27 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <finalName>PhoneActivationFinder</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.thinhl.RealActivationFinder</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+            </plugin>
+
         </plugins>
     </build>
 
